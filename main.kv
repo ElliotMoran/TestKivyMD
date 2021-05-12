@@ -1,0 +1,210 @@
+#:kivy 1.9
+<MainWindow>
+    orientation: 'vertical'
+
+    ans_label: ans_label
+
+    delete_button: delete_button
+
+    clear_button: clear_button
+    bkt_1_button: bkt_1_button
+    bkt_2_button: bkt_2_button
+    div_button: div_button
+
+    seven_button: seven_button
+    eight_button: eight_button
+    nine_button: nine_button
+    multi_button: multi_button
+
+    four_button: four_button
+    five_button: five_button
+    six_button: six_button
+    minus_button: minus_button
+
+    one_button: one_button
+    two_button: two_button
+    three_button: three_button
+    plus_button: plus_button
+
+    zero_button: zero_button
+    dot_button: dot_button
+    ans_button: ans_button
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '25sp'
+        size_hint: [1, .5]
+        
+        MDLabel:
+            id: ans_label
+            text: '0'
+            color: [0.2980392156862745, 0.6862745098039216, 0.3137254901960784, 1.0]
+            font_size: '35sp'   
+            valign: 'center' 
+            halign: 'right'
+
+    GridLayout:
+        rows: 1
+        cols: 4
+        size_hint: [1, .18]
+            
+        MDLabel:
+            text: ''
+        MDLabel:
+            text: ''
+        MDLabel:
+            text: ''
+        MDRectangleFlatButton:
+            id: delete_button
+            text: '<-'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.delete_symbol()
+
+    GridLayout:
+        rows: 5
+        cols: 4
+
+        #####################
+        MDRectangleFlatButton:
+            id: clear_button
+            text: 'C'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.clear_label()
+
+        MDRectangleFlatButton:
+            id: bkt_1_button
+            text: '('
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_symbol(self)
+
+        MDRectangleFlatButton:
+            id: bkt_2_button
+            text: ')'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_symbol(self)
+
+        MDRectangleFlatButton:
+            id: div_button
+            text: '/'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_symbol(self)
+        
+        #####################
+        MDRectangleFlatButton:
+            id: seven_button
+            text: '7'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: eight_button
+            text: '8'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: nine_button
+            text: '9'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: multi_button
+            text: '*'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_symbol(self)
+        
+        #####################
+        MDRectangleFlatButton:
+            id: four_button
+            text: '4'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: five_button
+            text: '5'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: six_button
+            text: '6'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: minus_button
+            text: '-'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_symbol(self)
+
+        #####################
+        MDRectangleFlatButton:
+            id: one_button
+            text: '1'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: two_button
+            text: '2'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: three_button
+            text: '3'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: plus_button
+            text: '+'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_symbol(self)
+
+        #####################
+        MDRectangleFlatButton:
+            id: void_button
+            text: ''
+            font_size: '30sp'
+            size_hint: [1, 1]
+
+        MDRectangleFlatButton:
+            id: zero_button
+            text: '0'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_number(self)
+
+        MDRectangleFlatButton:
+            id: dot_button
+            text: '.'
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.add_symbol(self)
+
+        MDRectangleFlatButton:
+            id: ans_button
+            text: '='
+            font_size: '30sp'
+            size_hint: [1, 1]
+            on_release: root.calculate()
