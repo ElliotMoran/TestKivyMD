@@ -49,7 +49,10 @@ class MainWindow(MDBoxLayout):
         if len(self.label) == 1:
             self.label = '0'
         else:
-            self.label = self.label[:-1]
+            if self.label == 'ERROR':
+                self.label = '0'
+            else:
+                self.label = self.label[:-1]
         self.ans_label.text = self.label
 
 
